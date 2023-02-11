@@ -1,32 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart' as path_provider;
+import 'package:todo_app/presentation/utils/router/app_router.dart';
 
-		void main() {
-		  runApp(const MyApp());
-		}
+import 'injectable/injectable.dart';
 
-		class MyApp extends StatelessWidget {
-		  const MyApp({super.key});
-		  @override
-		  Widget build(BuildContext context) {
-		    return MaterialApp(
-		        title: 'My App',
-		        debugShowCheckedModeBanner: false,
-		        theme: ThemeData(
-		        primarySwatch: Colors.blue,
-		        ),
-		        home: const HomePage(),
-		    );
-		  }
-		}
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final appDocumentDirectory =
+      await path_provider.getApplicationDocumentsDirectory();
+  await injectDependencies();
 
-		class HomePage extends StatelessWidget {
-		  const HomePage({super.key});
+  runApp(MyApp());
+}
 
-		  @override
-		  Widget build(BuildContext context) {
-		    return Scaffold(
-		        appBar: AppBar(
-		        title: (Text('My App')),
-		    ),
-		  );}
-		}
+class MyApp extends StatelessWidget {
+  MyApp({super.key});
+  final _appRouter = AppRouter();
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      localizationsDelegates: const [],
+      routerDelegate: _appRouter.delegate(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
+    );
+  }
+}

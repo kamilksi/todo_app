@@ -8,9 +8,12 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../domain/use_case/add_task_use_case.dart' as _i3;
+import '../data/repository/task_repository_impl.dart' as _i4;
+import '../domain/data_source/task_data_source.dart' as _i5;
+import '../domain/repository/task_repository.dart' as _i3;
+import '../domain/use_case/add_task_use_case.dart' as _i6;
 import '../domain/use_case/get_task_use_case.dart'
-    as _i4; // ignore_for_file: unnecessary_lambdas
+    as _i7; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -24,7 +27,11 @@ _i1.GetIt $initGetIt(
     environment,
     environmentFilter,
   );
-  gh.factory<_i3.AddTaskUseCase>(() => _i3.AddTaskUseCase(get<dynamic>()));
-  gh.factory<_i4.GetTaskUseCase>(() => _i4.GetTaskUseCase(get<dynamic>()));
+  gh.factory<_i3.TaskRepository>(
+      () => _i4.TaskRepositoryImpl(get<_i5.TaskDataSource>()));
+  gh.factory<_i6.AddTaskUseCase>(
+      () => _i6.AddTaskUseCase(get<_i3.TaskRepository>()));
+  gh.factory<_i7.GetTaskUseCase>(
+      () => _i7.GetTaskUseCase(get<_i3.TaskRepository>()));
   return get;
 }

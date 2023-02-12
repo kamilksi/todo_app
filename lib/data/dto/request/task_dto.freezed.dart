@@ -14,11 +14,16 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+TaskEntityDto _$TaskEntityDtoFromJson(Map<String, dynamic> json) {
+  return _TaskEntityDto.fromJson(json);
+}
+
 /// @nodoc
 mixin _$TaskEntityDto {
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TaskEntityDtoCopyWith<TaskEntityDto> get copyWith =>
       throw _privateConstructorUsedError;
@@ -99,9 +104,12 @@ class __$$_TaskEntityDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_TaskEntityDto implements _TaskEntityDto {
   const _$_TaskEntityDto({required this.name, required this.description});
+
+  factory _$_TaskEntityDto.fromJson(Map<String, dynamic> json) =>
+      _$$_TaskEntityDtoFromJson(json);
 
   @override
   final String name;
@@ -123,6 +131,7 @@ class _$_TaskEntityDto implements _TaskEntityDto {
                 .equals(other.description, description));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -133,12 +142,22 @@ class _$_TaskEntityDto implements _TaskEntityDto {
   @override
   _$$_TaskEntityDtoCopyWith<_$_TaskEntityDto> get copyWith =>
       __$$_TaskEntityDtoCopyWithImpl<_$_TaskEntityDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_TaskEntityDtoToJson(
+      this,
+    );
+  }
 }
 
 abstract class _TaskEntityDto implements TaskEntityDto {
   const factory _TaskEntityDto(
       {required final String name,
       required final String description}) = _$_TaskEntityDto;
+
+  factory _TaskEntityDto.fromJson(Map<String, dynamic> json) =
+      _$_TaskEntityDto.fromJson;
 
   @override
   String get name;

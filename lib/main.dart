@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
 import 'package:todo_app/presentation/utils/router/app_router.dart';
 
@@ -9,7 +10,7 @@ void main() async {
   final appDocumentDirectory =
       await path_provider.getApplicationDocumentsDirectory();
   await injectDependencies();
-
+  Hive.init(appDocumentDirectory.path);
   runApp(MyApp());
 }
 

@@ -1,8 +1,10 @@
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:injectable/injectable.dart';
 import 'package:todo_app/data/dto/request/task_dto.dart';
 
 import '../../domain/data_source/task_data_source.dart';
 
+@Injectable(as: TaskDataSource)
 class TaskDataSourceImpl implements TaskDataSource {
   static const _taskDataBox = "task_data_box";
 

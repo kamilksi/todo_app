@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:todo_app/presentation/home_page/cubit/home_page_cubit.dart';
 import 'package:todo_app/presentation/home_page/widgets/task_tile.dart';
 import 'package:todo_app/presentation/utils/router/app_router.dart';
 
@@ -14,7 +15,9 @@ class HomePageBody extends StatelessWidget {
         title: Text("Todo"),
       ),
       floatingActionButton: FloatingActionButton(onPressed: () async {
-        await context.router.push(AddRoute());
+        final cubit = context.read<HomePageCubit>();
+        await context.router.push(const AddRoute());
+        cubit.init();
       }),
       body: Column(
           mainAxisAlignment: MainAxisAlignment.center,

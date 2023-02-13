@@ -9,8 +9,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final appDocumentDirectory =
       await path_provider.getApplicationDocumentsDirectory();
-  await injectDependencies();
   Hive.init(appDocumentDirectory.path);
+  await injectDependencies();
   runApp(MyApp());
 }
 

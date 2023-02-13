@@ -19,24 +19,24 @@ mixin _$AddPageState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() inital,
-    required TResult Function() loading,
     required TResult Function() success,
+    required TResult Function() loading,
     required TResult Function(Failure error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? inital,
-    TResult Function()? loading,
     TResult Function()? success,
+    TResult Function()? loading,
     TResult Function(Failure error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? inital,
-    TResult Function()? loading,
     TResult Function()? success,
+    TResult Function()? loading,
     TResult Function(Failure error)? error,
     required TResult orElse(),
   }) =>
@@ -44,24 +44,24 @@ mixin _$AddPageState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Inital value) inital,
-    required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
+    required TResult Function(_Loading value) loading,
     required TResult Function(_ServerError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Inital value)? inital,
-    TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
+    TResult Function(_Loading value)? loading,
     TResult Function(_ServerError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Inital value)? inital,
-    TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
+    TResult Function(_Loading value)? loading,
     TResult Function(_ServerError value)? error,
     required TResult orElse(),
   }) =>
@@ -123,8 +123,8 @@ class _$_Inital implements _Inital {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() inital,
-    required TResult Function() loading,
     required TResult Function() success,
+    required TResult Function() loading,
     required TResult Function(Failure error) error,
   }) {
     return inital();
@@ -134,8 +134,8 @@ class _$_Inital implements _Inital {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? inital,
-    TResult Function()? loading,
     TResult Function()? success,
+    TResult Function()? loading,
     TResult Function(Failure error)? error,
   }) {
     return inital?.call();
@@ -145,8 +145,8 @@ class _$_Inital implements _Inital {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? inital,
-    TResult Function()? loading,
     TResult Function()? success,
+    TResult Function()? loading,
     TResult Function(Failure error)? error,
     required TResult orElse(),
   }) {
@@ -160,8 +160,8 @@ class _$_Inital implements _Inital {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Inital value) inital,
-    required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
+    required TResult Function(_Loading value) loading,
     required TResult Function(_ServerError value) error,
   }) {
     return inital(this);
@@ -171,8 +171,8 @@ class _$_Inital implements _Inital {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Inital value)? inital,
-    TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
+    TResult Function(_Loading value)? loading,
     TResult Function(_ServerError value)? error,
   }) {
     return inital?.call(this);
@@ -182,8 +182,8 @@ class _$_Inital implements _Inital {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Inital value)? inital,
-    TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
+    TResult Function(_Loading value)? loading,
     TResult Function(_ServerError value)? error,
     required TResult orElse(),
   }) {
@@ -196,121 +196,6 @@ class _$_Inital implements _Inital {
 
 abstract class _Inital implements AddPageState {
   const factory _Inital() = _$_Inital;
-}
-
-/// @nodoc
-abstract class _$$_LoadingCopyWith<$Res> {
-  factory _$$_LoadingCopyWith(
-          _$_Loading value, $Res Function(_$_Loading) then) =
-      __$$_LoadingCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_LoadingCopyWithImpl<$Res> extends _$AddPageStateCopyWithImpl<$Res>
-    implements _$$_LoadingCopyWith<$Res> {
-  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
-      : super(_value, (v) => _then(v as _$_Loading));
-
-  @override
-  _$_Loading get _value => super._value as _$_Loading;
-}
-
-/// @nodoc
-
-class _$_Loading implements _Loading {
-  const _$_Loading();
-
-  @override
-  String toString() {
-    return 'AddPageState.loading()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Loading);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() inital,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function(Failure error) error,
-  }) {
-    return loading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? inital,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(Failure error)? error,
-  }) {
-    return loading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? inital,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(Failure error)? error,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Inital value) inital,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_ServerError value) error,
-  }) {
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Inital value)? inital,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_ServerError value)? error,
-  }) {
-    return loading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Inital value)? inital,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_ServerError value)? error,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Loading implements AddPageState {
-  const factory _Loading() = _$_Loading;
 }
 
 /// @nodoc
@@ -353,8 +238,8 @@ class _$_Success implements _Success {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() inital,
-    required TResult Function() loading,
     required TResult Function() success,
+    required TResult Function() loading,
     required TResult Function(Failure error) error,
   }) {
     return success();
@@ -364,8 +249,8 @@ class _$_Success implements _Success {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? inital,
-    TResult Function()? loading,
     TResult Function()? success,
+    TResult Function()? loading,
     TResult Function(Failure error)? error,
   }) {
     return success?.call();
@@ -375,8 +260,8 @@ class _$_Success implements _Success {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? inital,
-    TResult Function()? loading,
     TResult Function()? success,
+    TResult Function()? loading,
     TResult Function(Failure error)? error,
     required TResult orElse(),
   }) {
@@ -390,8 +275,8 @@ class _$_Success implements _Success {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Inital value) inital,
-    required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
+    required TResult Function(_Loading value) loading,
     required TResult Function(_ServerError value) error,
   }) {
     return success(this);
@@ -401,8 +286,8 @@ class _$_Success implements _Success {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Inital value)? inital,
-    TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
+    TResult Function(_Loading value)? loading,
     TResult Function(_ServerError value)? error,
   }) {
     return success?.call(this);
@@ -412,8 +297,8 @@ class _$_Success implements _Success {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Inital value)? inital,
-    TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
+    TResult Function(_Loading value)? loading,
     TResult Function(_ServerError value)? error,
     required TResult orElse(),
   }) {
@@ -426,6 +311,121 @@ class _$_Success implements _Success {
 
 abstract class _Success implements AddPageState {
   const factory _Success() = _$_Success;
+}
+
+/// @nodoc
+abstract class _$$_LoadingCopyWith<$Res> {
+  factory _$$_LoadingCopyWith(
+          _$_Loading value, $Res Function(_$_Loading) then) =
+      __$$_LoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_LoadingCopyWithImpl<$Res> extends _$AddPageStateCopyWithImpl<$Res>
+    implements _$$_LoadingCopyWith<$Res> {
+  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
+      : super(_value, (v) => _then(v as _$_Loading));
+
+  @override
+  _$_Loading get _value => super._value as _$_Loading;
+}
+
+/// @nodoc
+
+class _$_Loading implements _Loading {
+  const _$_Loading();
+
+  @override
+  String toString() {
+    return 'AddPageState.loading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Loading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() inital,
+    required TResult Function() success,
+    required TResult Function() loading,
+    required TResult Function(Failure error) error,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? inital,
+    TResult Function()? success,
+    TResult Function()? loading,
+    TResult Function(Failure error)? error,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? inital,
+    TResult Function()? success,
+    TResult Function()? loading,
+    TResult Function(Failure error)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Inital value) inital,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_ServerError value) error,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Inital value)? inital,
+    TResult Function(_Success value)? success,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_ServerError value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Inital value)? inital,
+    TResult Function(_Success value)? success,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_ServerError value)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Loading implements AddPageState {
+  const factory _Loading() = _$_Loading;
 }
 
 /// @nodoc
@@ -503,8 +503,8 @@ class _$_ServerError implements _ServerError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() inital,
-    required TResult Function() loading,
     required TResult Function() success,
+    required TResult Function() loading,
     required TResult Function(Failure error) error,
   }) {
     return error(this.error);
@@ -514,8 +514,8 @@ class _$_ServerError implements _ServerError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? inital,
-    TResult Function()? loading,
     TResult Function()? success,
+    TResult Function()? loading,
     TResult Function(Failure error)? error,
   }) {
     return error?.call(this.error);
@@ -525,8 +525,8 @@ class _$_ServerError implements _ServerError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? inital,
-    TResult Function()? loading,
     TResult Function()? success,
+    TResult Function()? loading,
     TResult Function(Failure error)? error,
     required TResult orElse(),
   }) {
@@ -540,8 +540,8 @@ class _$_ServerError implements _ServerError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Inital value) inital,
-    required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
+    required TResult Function(_Loading value) loading,
     required TResult Function(_ServerError value) error,
   }) {
     return error(this);
@@ -551,8 +551,8 @@ class _$_ServerError implements _ServerError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Inital value)? inital,
-    TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
+    TResult Function(_Loading value)? loading,
     TResult Function(_ServerError value)? error,
   }) {
     return error?.call(this);
@@ -562,8 +562,8 @@ class _$_ServerError implements _ServerError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Inital value)? inital,
-    TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
+    TResult Function(_Loading value)? loading,
     TResult Function(_ServerError value)? error,
     required TResult orElse(),
   }) {

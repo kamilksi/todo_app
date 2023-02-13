@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:todo_app/domain/entity/request/task/task.dart';
-import 'package:todo_app/domain/entity/response/failure.dart';
 import 'package:todo_app/domain/use_case/add_task_use_case.dart';
 import 'add_page_state.dart';
 
@@ -12,11 +11,8 @@ class AddPageCubit extends Cubit<AddPageState> {
   final AddTaskUseCase _addTaskUseCase;
 
   Future<void> addTask(TaskEntity task) async {
-    emit(const AddPageState.loading());
-    Future.delayed(const Duration(seconds: 2), () async {
-      final result = await _addTaskUseCase(task);
-      result.fold((l) => emit(AddPageState.error(l)),
-          (r) => emit(AddPageState.success()));
-    });
+    final result = await _addTaskUseCase(task);
+    result.fold((l) => emit(AddPageState.error(l)),
+        (r) => emit(const AddPageState.success()));
   }
 }

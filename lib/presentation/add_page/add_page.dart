@@ -15,6 +15,7 @@ class AddPage extends StatelessWidget {
           title: _title,
           centerTitle: true,
           elevation: 0,
+          
         ),
         body: BlocProvider(
           create: (_) => getIt<AddPageCubit>(),

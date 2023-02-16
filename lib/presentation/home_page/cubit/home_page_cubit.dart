@@ -14,7 +14,7 @@ class HomePageCubit extends Cubit<HomePageState> {
     emit(const HomePageState.loading());
     final result = await _getTaskUseCase();
 
-    Future.delayed(const Duration(seconds: 2), () async {
+    Future.delayed(const Duration(seconds: 1), () async {
       result.fold((l) => emit(HomePageState.error(l)),
           (r) => emit(HomePageState.success(tasks: r)));
     });

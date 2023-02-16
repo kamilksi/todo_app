@@ -39,4 +39,10 @@ class TaskDataSourceImpl implements TaskDataSource {
     }
     return results;
   }
+
+  @override
+  Future<void> deleteTask({required int index}) async {
+    final box = await registerTaskBox();
+    box.deleteAt(index);
+  }
 }

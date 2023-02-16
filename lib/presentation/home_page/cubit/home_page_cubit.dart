@@ -19,10 +19,9 @@ class HomePageCubit extends Cubit<HomePageState> {
       result.fold((l) => emit(HomePageState.error(l)),
           (r) => emit(HomePageState.success(tasks: r)));
     });
-
-    Future<void> deleteTask(int index) async {
-      final result = await _deleteTaskUseCase(index);
-      result.fold((l) => emit(HomePageState.error(l)), (r) => init());
-    }
+  }
+  Future<void> deleteTask(int index) async {
+    final result = await _deleteTaskUseCase(index);
+    result.fold((l) => emit(HomePageState.error(l)), (r) => init());
   }
 }

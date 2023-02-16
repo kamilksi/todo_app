@@ -19,7 +19,7 @@ class AppCustomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) =>
       Scaffold(
-          backgroundColor: Colors.indigo.shade700,
+          backgroundColor: Colors.blueAccent,
           appBar: AppBar(
             title: title,
             backgroundColor: backgroundColor,

@@ -11,14 +11,11 @@ class AppEditWidget extends StatelessWidget {
     this.width,
     required this.titleController,
     required this.descriptionController,
-    this.addState,
   });
 
   final VoidCallback? onPressed;
   final String text;
   final double? width;
-  final AddPageState? addState;
-  // final EditPageState? editState;
   final TextEditingController titleController;
   final TextEditingController descriptionController;
   @override

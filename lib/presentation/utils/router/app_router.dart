@@ -1,5 +1,6 @@
 import 'package:auto_route/annotations.dart';
 import 'package:todo_app/presentation/add_page/add_page.dart';
+import 'package:todo_app/presentation/update_page/update_page.dart';
 
 import '../../home_page/home_page.dart';
 
@@ -10,6 +11,7 @@ export 'app_router.gr.dart';
   routes: <AutoRoute>[
     AutoRoute(page: HomePage, initial: true),
     AutoRoute(page: AddPage),
+    AutoRoute(page: UpdatePage),
   ],
 )
 class $AppRouter {}

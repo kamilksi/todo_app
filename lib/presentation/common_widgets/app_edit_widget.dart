@@ -11,6 +11,7 @@ class AppEditWidget extends StatelessWidget {
     this.width,
     required this.titleController,
     required this.descriptionController,
+    this.backgroundColor,
   });
 
   final VoidCallback? onPressed;
@@ -18,13 +19,16 @@ class AppEditWidget extends StatelessWidget {
   final double? width;
   final TextEditingController titleController;
   final TextEditingController descriptionController;
+  final Color? backgroundColor;
   @override
   Widget build(BuildContext context) => SafeArea(
         child: CustomScrollView(
           slivers: [
             SliverFillRemaining(
               hasScrollBody: false,
-              child: Padding(
+              child: Container(
+                decoration:
+                    BoxDecoration(color: backgroundColor ?? Colors.white),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
                 child: Form(

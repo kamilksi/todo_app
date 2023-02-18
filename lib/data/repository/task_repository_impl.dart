@@ -34,4 +34,14 @@ class TaskRepositoryImpl implements TaskRepository {
       return const Left(Failure());
     }
   }
+
+  @override
+  Future<Either<Failure, Success>> deleteTask(int index) async {
+    try {
+      await taskDataSource.deleteTask(index: index);
+      return const Right(Success());
+    } catch (err) {
+      return const Left(Failure());
+    }
+  }
 }

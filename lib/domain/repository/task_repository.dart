@@ -8,4 +8,5 @@ abstract class TaskRepository {
   Future<Either<Failure, Success>> addTask(TaskEntity task);
   Future<Either<Failure, List<TaskEntity>>> getTasks();
   Future<Either<Failure, Success>> deleteTask(int index);
+  Future<Either<Failure, Success>> updateTask(TaskEntity task, int index);
 }

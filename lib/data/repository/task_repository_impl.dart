@@ -44,4 +44,15 @@ class TaskRepositoryImpl implements TaskRepository {
       return const Left(Failure());
     }
   }
+
+  @override
+  Future<Either<Failure, Success>> updateTask(
+      TaskEntity task, int index) async {
+    try {
+      await taskDataSource.updateTask(task: task.toDto, index: index);
+      return const Right(Success());
+    } catch (err) {
+      return const Left(Failure());
+    }
+  }
 }

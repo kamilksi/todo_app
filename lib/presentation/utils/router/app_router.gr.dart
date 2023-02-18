@@ -13,6 +13,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i4;
 import 'package:flutter/material.dart' as _i5;
+import 'package:todo_app/domain/entity/request/task/task.dart' as _i6;
 import 'package:todo_app/presentation/add_page/add_page.dart' as _i2;
 import 'package:todo_app/presentation/home_page/home_page.dart' as _i1;
 import 'package:todo_app/presentation/update_page/update_page.dart' as _i3;
@@ -42,6 +43,7 @@ class AppRouter extends _i4.RootStackRouter {
         child: _i3.UpdatePage(
           key: args.key,
           index: args.index,
+          taskEntity: args.taskEntity,
         ),
       );
     },
@@ -94,12 +96,14 @@ class UpdateRoute extends _i4.PageRouteInfo<UpdateRouteArgs> {
   UpdateRoute({
     _i5.Key? key,
     required int index,
+    required _i6.TaskEntity taskEntity,
   }) : super(
           UpdateRoute.name,
           path: '/update-page',
           args: UpdateRouteArgs(
             key: key,
             index: index,
+            taskEntity: taskEntity,
           ),
         );
 
@@ -110,14 +114,17 @@ class UpdateRouteArgs {
   const UpdateRouteArgs({
     this.key,
     required this.index,
+    required this.taskEntity,
   });
 
   final _i5.Key? key;
 
   final int index;
 
+  final _i6.TaskEntity taskEntity;
+
   @override
   String toString() {
-    return 'UpdateRouteArgs{key: $key, index: $index}';
+    return 'UpdateRouteArgs{key: $key, index: $index, taskEntity: $taskEntity}';
   }
 }

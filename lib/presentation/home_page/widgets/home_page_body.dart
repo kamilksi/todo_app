@@ -34,7 +34,10 @@ class HomePageBody extends StatelessWidget {
               itemBuilder: (BuildContext context, int index) => InkWell(
                 onLongPress: () async {
                   final cubit = context.read<HomePageCubit>();
-                  await context.router.push(UpdateRoute(index: index));
+                  await context.router.push(UpdateRoute(
+                    index: index,
+                    taskEntity: state.tasks[index],
+                  ));
                   cubit.init();
                 },
                 child: TaskTile(

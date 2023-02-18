@@ -9,14 +9,17 @@ import 'package:todo_app/presentation/update_page/cubit/update_page_state.dart';
 
 class UpdatePageBody extends HookWidget {
   final int index;
-  const UpdatePageBody({Key? key, required this.index}) : super(key: key);
+  final TaskEntity taskEntity;
+  const UpdatePageBody(
+      {Key? key, required this.index, required this.taskEntity})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final TextEditingController titleTextController =
-        useTextEditingController();
+        useTextEditingController(text: taskEntity.name);
     final TextEditingController descriptionTextController =
-        useTextEditingController();
+        useTextEditingController(text: taskEntity.description);
     return BlocConsumer<UpdatePageCubit, UpdatePageState>(
       listener: _listener,
       builder: (BuildContext context, UpdatePageState state) => AppEditWidget(

@@ -5,6 +5,7 @@ import 'package:todo_app/presentation/common_widgets/app_custom_bar.dart';
 import 'package:todo_app/presentation/home_page/cubit/home_page_cubit.dart';
 import 'package:todo_app/presentation/home_page/cubit/home_page_state.dart';
 import 'package:todo_app/presentation/home_page/widgets/task_tile.dart';
+import 'package:todo_app/presentation/update_page/cubit/update_page_cubit.dart';
 import 'package:todo_app/presentation/utils/router/app_router.dart';
 
 const Text _title = Text("To Do");
@@ -30,15 +31,21 @@ class HomePageBody extends StatelessWidget {
             ),
             success: (state) => ListView.builder(
               itemCount: state.tasks.length,
-              itemBuilder: (BuildContext context, int index) => TaskTile(
+              itemBuilder: (BuildContext context, int index) => InkWell(
+                onLongPress: () async {
+                  final cubit = context.read<HomePageCubit>();
+                  await context.router.push(UpdateRoute(index: index));
+                  cubit.init();
+                },
+                child: TaskTile(
                   title: state.tasks[index].name,
                   description: state.tasks[index].description,
                   onTap: () async {
-            final cubit = context.read<HomePageCubit>();
-            cubit.deleteTask(index);
-            },
+                    final cubit = context.read<HomePageCubit>();
+                    cubit.deleteTask(index);
+                  },
+                ),
               ),
-
             ),
             error: (state) => Text("Error"),
           ),

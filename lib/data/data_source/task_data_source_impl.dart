@@ -45,4 +45,12 @@ class TaskDataSourceImpl implements TaskDataSource {
     final box = await registerTaskBox();
     box.deleteAt(index);
   }
+
+  @override
+  Future<void> updateTask(
+      {required TaskEntityDto task, required int index}) async {
+    final box = await registerTaskBox();
+    await box
+        .putAt(index, {'name': task.name, 'description': task.description});
+  }
 }
